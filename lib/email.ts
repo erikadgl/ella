@@ -78,6 +78,7 @@ export async function sendStatusChangeEmail(
   );
 }
 
+/** Notification a l'organisateur : nouvelle inscription (destinataire = ADMIN_EMAIL). */
 export async function sendAdminNotification(
   name: string,
   email: string,

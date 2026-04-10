@@ -13,8 +13,8 @@ Landing page pour un evenement avec formulaire d'inscription, emails automatique
 ## Fonctionnalites
 
 - Landing page avec formulaire d'inscription (nom, email, telephone)
-- Email de confirmation automatique avec informations de paiement
-- Notification email a l'admin pour chaque nouvelle inscription
+- Email de confirmation automatique avec informations de paiement (envoye au participant)
+- Email de notification a l'organisateur a chaque nouvelle inscription (`ADMIN_EMAIL`)
 - Tableau de bord admin protege par mot de passe
 - Gestion des statuts (en attente / paye / annule)
 - Email automatique au participant a chaque changement de statut
@@ -74,8 +74,8 @@ ADMIN_PASSWORD=votre-mot-de-passe
 # URL publique de l'app (localhost en dev, votre domaine en prod)
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 
-# Optionnel : email de l'admin pour recevoir les notifications
-ADMIN_EMAIL=admin@exemple.com
+# Votre email : alerte a chaque inscription (distinct du mail de confirmation au participant)
+ADMIN_EMAIL=vous@exemple.com
 ```
 
 ### 6. Lancer en local
@@ -104,7 +104,8 @@ Ouvrir [http://localhost:3000](http://localhost:3000).
    - `RESEND_API_KEY`
    - `ADMIN_PASSWORD`
    - `NEXT_PUBLIC_APP_URL` (mettre l'URL Vercel, ex: `https://ella.vercel.app`)
-   - `ADMIN_EMAIL` (optionnel)
+   - `RESEND_FROM_EMAIL` (recommande en prod : expéditeur sur domaine verifie Resend)
+   - `ADMIN_EMAIL` (recommande : notifications « nouvelle inscription »)
 4. Deployer
 
 ## Structure du projet
