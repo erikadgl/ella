@@ -2,19 +2,30 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const FROM_EMAIL = "Ella <onboarding@resend.dev>";
+/** En production : domaine verifie dans Resend, ex. Ella <inscription@votredomaine.com> */
+const FROM_EMAIL =
+  process.env.RESEND_FROM_EMAIL ?? "Ella <onboarding@resend.dev>";
+
+async function sendOrLog(
+  payload: Parameters<typeof resend.emails.send>[0],
+  label: string,
+) {
+  const { error } = await resend.emails.send(payload);
+  if (error) {
+    console.error(`[email] ${label} failed:`, error);
+  }
+}
 
 export async function sendConfirmationEmail(
   to: string,
   name: string,
 ) {
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
-
-  await resend.emails.send({
-    from: FROM_EMAIL,
-    to,
-    subject: "Inscription confirmee - Informations de paiement",
-    html: `
+  await sendOrLog(
+    {
+      from: FROM_EMAIL,
+      to,
+      subject: "Inscription confirmee - Informations de paiement",
+      html: `
       <h1>Bonjour ${name},</h1>
       <p>Merci pour votre inscription ! Votre demande a bien ete enregistree.</p>
       <h2>Informations pour l'acompte</h2>
@@ -27,7 +38,9 @@ export async function sendConfirmationEmail(
       <p>Vous recevrez un email de confirmation des que votre paiement aura ete traite.</p>
       <p>A bientot !</p>
     `,
-  });
+    },
+    "confirmation",
+  );
 }
 
 export async function sendStatusChangeEmail(
@@ -51,15 +64,18 @@ export async function sendStatusChangeEmail(
   const message = statusMessages[status];
   if (!message) return;
 
-  await resend.emails.send({
-    from: FROM_EMAIL,
-    to,
-    subject: message.subject,
-    html: `
+  await sendOrLog(
+    {
+      from: FROM_EMAIL,
+      to,
+      subject: message.subject,
+      html: `
       <h1>Bonjour ${name},</h1>
       ${message.body}
     `,
-  });
+    },
+    "status-change",
+  );
 }
 
 export async function sendAdminNotification(
@@ -70,11 +86,12 @@ export async function sendAdminNotification(
   const adminEmail = process.env.ADMIN_EMAIL;
   if (!adminEmail) return;
 
-  await resend.emails.send({
-    from: FROM_EMAIL,
-    to: adminEmail,
-    subject: `Nouvelle inscription : ${name}`,
-    html: `
+  await sendOrLog(
+    {
+      from: FROM_EMAIL,
+      to: adminEmail,
+      subject: `Nouvelle inscription : ${name}`,
+      html: `
       <h1>Nouvelle inscription</h1>
       <ul>
         <li><strong>Nom :</strong> ${name}</li>
@@ -82,5 +99,7 @@ export async function sendAdminNotification(
         <li><strong>Telephone :</strong> ${phone || "Non renseigne"}</li>
       </ul>
     `,
-  });
+    },
+    "admin-notification",
+  );
 }
