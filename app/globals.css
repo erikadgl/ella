@@ -49,6 +49,8 @@
   --color-sage: var(--sage);
   --color-mint: var(--mint);
   --color-cream: var(--cream);
+  /** Texte sur fond clair (ex. CTA hover en mode sombre) — ne pas confondre avec ink-strong qui s’inverse au dark */
+  --color-ink-on-cream: #232323;
   --color-hero: var(--hero-bg);
   --color-hero-fg: var(--hero-fg);
   --font-sans: var(--font-mulish), "Mulish", ui-sans-serif, system-ui, sans-serif;

@@ -33,7 +33,7 @@ export default function ConfirmationPage() {
         </p>
         <Link
           href="/"
-          className="inline-block rounded-full border border-ink-strong bg-transparent px-6 py-2.5 font-sans text-sm font-bold text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-strong"
+          className="inline-block rounded-full border border-ink-strong bg-transparent px-6 py-2.5 font-sans text-sm font-bold text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-on-cream"
         >
           Retour à l&apos;accueil
         </Link>

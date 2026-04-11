@@ -15,11 +15,11 @@ const sectionTitleClass =
 
 /** CTA barre de nav : contour couleur texte, fond transparent, hover inversé. */
 const navCtaClass =
-  "inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-ink-strong bg-transparent px-3.5 py-2 font-sans text-[14px] font-bold leading-none tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-strong dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page sm:px-5 sm:py-2.5";
+  "inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-ink-strong bg-transparent px-3.5 py-2 font-sans text-[14px] font-bold leading-none tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-on-cream dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page sm:px-5 sm:py-2.5";
 
 /** CTA formulaire : même logique (coins arrondis conservés). */
 const primaryCtaClass =
-  "inline-flex items-center justify-center rounded-xl border border-ink-strong bg-transparent px-6 py-3.5 font-sans text-sm font-bold tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-strong dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-transparent disabled:hover:text-ink-strong dark:disabled:hover:bg-transparent dark:disabled:hover:text-cream";
+  "inline-flex items-center justify-center rounded-xl border border-ink-strong bg-transparent px-6 py-3.5 font-sans text-sm font-bold tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-on-cream dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-transparent disabled:hover:text-ink-strong dark:disabled:hover:bg-transparent dark:disabled:hover:text-cream";
 
 export default function Home() {
   const router = useRouter();
