@@ -15,7 +15,7 @@ const sectionTitleClass =
 
 /** CTA barre de nav : contour couleur texte, fond transparent, hover inversé. */
 const navCtaClass =
-  "inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-ink-strong bg-transparent px-3.5 py-2 font-sans text-[14px] font-bold leading-none tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-strong dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-ink-strong sm:px-5 sm:py-2.5";
+  "inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-ink-strong bg-transparent px-3.5 py-2 font-sans text-[14px] font-bold leading-none tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-strong dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page sm:px-5 sm:py-2.5";
 
 /** CTA formulaire : même logique (coins arrondis conservés). */
 const primaryCtaClass =
@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col flex-1">
-      <header className="sticky top-0 z-50 border-b border-ink-strong/10 bg-page/95 text-ink-strong backdrop-blur-md dark:border-cream/10 dark:bg-ink-strong/95 dark:text-cream">
+      <header className="sticky top-0 z-50 border-b border-ink-strong/10 bg-page/95 text-ink-strong backdrop-blur-md dark:border-cream/15 dark:bg-page/95 dark:text-cream">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
           <a
             href="/"
@@ -650,8 +650,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-ink-strong/10 bg-sage/35 py-10 text-center text-sm text-ink dark:border-cream/10 dark:bg-ink-strong dark:text-cream/75">
-        <p className="font-medium text-ink-strong dark:text-cream">
+      <footer className="border-t border-ink-strong/10 bg-sage/35 py-10 text-center text-sm text-ink dark:border-cream/15 dark:bg-sage dark:text-cream/85">
+        <p className="font-medium text-ink-strong dark:text-cream/95">
           Week-end Ayurveda &amp; Sonothérapie · 9 – 11 octobre 2026
         </p>
         <p className="mt-6 text-xs opacity-80">
