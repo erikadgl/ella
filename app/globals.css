@@ -1,26 +1,103 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+ * Cy Grotesk Key (titres) — ajoutez au moins :
+ *   public/fonts/CyGroteskKey-Regular.woff2
+ * (autres graisses optionnelles : Medium, Demi, Bold…)
+ * Sans fichier, le navigateur utilisera la pile système.
+ */
+@font-face {
+  font-family: "Cy Grotesk Key";
+  src: url("/fonts/CyGroteskKey-Regular.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --cream: #f7f6ed;
+  --page-bg: #f7f6ed;
+  --card-bg: #ffffff;
+  --ink: #403e3e;
+  --ink-strong: #232323;
+  --brand: #eaa821;
+  --sage: #d6ddaf;
+  --mint: #b3d3cd;
+  --hero-bg: #232323;
+  --hero-fg: #f7f6ed;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --page-bg: #232323;
+    --card-bg: #2a2a2a;
+    --ink: #e8e4d9;
+    --ink-strong: #f7f6ed;
+    --sage: #3d4234;
+    --mint: #2d4541;
+    --hero-bg: #1a1a1a;
+    --hero-fg: #f7f6ed;
   }
 }
 
+@theme inline {
+  --color-page: var(--page-bg);
+  --color-card: var(--card-bg);
+  --color-ink: var(--ink);
+  --color-ink-strong: var(--ink-strong);
+  --color-brand: var(--brand);
+  --color-sage: var(--sage);
+  --color-mint: var(--mint);
+  --color-cream: var(--cream);
+  --color-hero: var(--hero-bg);
+  --color-hero-fg: var(--hero-fg);
+  --font-sans: var(--font-mulish), "Mulish", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Cy Grotesk Key", ui-sans-serif, system-ui, sans-serif;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--page-bg);
+  color: var(--ink);
+}
+
+/* Lien d’évitement : visible uniquement au focus clavier */
+.skip-link {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  border-radius: 0.5rem;
+  background-color: var(--ink-strong);
+  color: var(--cream);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.2);
+  outline: 2px solid var(--mint);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

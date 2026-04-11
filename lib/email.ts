@@ -31,7 +31,7 @@ export async function sendConfirmationEmail(
       <h2>Informations pour l'acompte</h2>
       <p>Pour finaliser votre inscription, veuillez effectuer un acompte selon les modalites suivantes :</p>
       <ul>
-        <li><strong>Montant :</strong> A definir</li>
+        <li><strong>Montant de l&apos;acompte :</strong> 75&nbsp;&euro;</li>
         <li><strong>Mode de paiement :</strong> Virement bancaire</li>
         <li><strong>Reference :</strong> ELLA-${name.toUpperCase().replace(/\s/g, "")}</li>
       </ul>

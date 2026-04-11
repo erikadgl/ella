@@ -2,15 +2,19 @@ import Link from "next/link";
 
 export default function ConfirmationPage() {
   return (
-    <div className="flex flex-1 items-center justify-center px-6">
+    <main
+      id="contenu-principal"
+      className="flex flex-1 items-center justify-center bg-page px-6"
+    >
       <div className="max-w-md text-center">
-        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
+        <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-mint/40 dark:bg-mint/25">
           <svg
-            className="h-8 w-8 text-green-600 dark:text-green-400"
+            className="h-8 w-8 text-ink-strong dark:text-[#B3D3CD]"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2}
             stroke="currentColor"
+            aria-hidden
           >
             <path
               strokeLinecap="round"
@@ -19,19 +23,21 @@ export default function ConfirmationPage() {
             />
           </svg>
         </div>
-        <h1 className="text-2xl font-bold mb-3">Inscription confirmee !</h1>
-        <p className="text-zinc-600 dark:text-zinc-400 mb-6">
+        <h1 className="mb-3 font-heading text-2xl font-semibold text-ink-strong dark:text-cream">
+          Inscription confirmée !
+        </h1>
+        <p className="mb-6 text-ink/90 dark:text-cream/75">
           Merci pour votre inscription. Un email de confirmation avec les
-          informations de paiement vous a ete envoye. Pensez a verifier vos
-          spams.
+          modalités de paiement (acompte de 75&nbsp;€) vous a été envoyé. Pensez
+          à vérifier vos spams.
         </p>
         <Link
           href="/"
-          className="inline-block rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-500 transition-colors"
+          className="inline-block rounded-full border border-ink-strong bg-transparent px-6 py-2.5 font-sans text-sm font-bold text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-strong"
         >
-          Retour a l&apos;accueil
+          Retour à l&apos;accueil
         </Link>
       </div>
-    </div>
+    </main>
   );
 }
