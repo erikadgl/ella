@@ -31,10 +31,11 @@ export async function sendConfirmationEmail(
       <h2>Informations pour l'acompte</h2>
       <p>Pour finaliser votre inscription, veuillez effectuer un acompte selon les modalites suivantes :</p>
       <ul>
-        <li><strong>Montant de l&apos;acompte :</strong> 75&nbsp;&euro;</li>
+        <li><strong>Montant de l&apos;acompte :</strong> 100&nbsp;&euro;</li>
         <li><strong>Mode de paiement :</strong> Virement bancaire</li>
         <li><strong>Reference :</strong> ELLA-${name.toUpperCase().replace(/\s/g, "")}</li>
       </ul>
+      <p>Toute annulation avant le 31 aout 2026 est remboursee integralement.</p>
       <p>Vous recevrez un email de confirmation des que votre paiement aura ete traite.</p>
       <p>A bientot !</p>
     `,

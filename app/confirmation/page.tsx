@@ -28,7 +28,7 @@ export default function ConfirmationPage() {
         </h1>
         <p className="mb-6 text-ink/90 dark:text-cream/75">
           Merci pour votre inscription. Un email de confirmation avec les
-          modalités de paiement (acompte de 75&nbsp;€) vous a été envoyé. Pensez
+          modalités de paiement (acompte de 100&nbsp;€) vous a été envoyé. Pensez
           à vérifier vos spams.
         </p>
         <Link

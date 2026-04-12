@@ -17,9 +17,9 @@ const sectionTitleClass =
 const navCtaClass =
   "inline-flex shrink-0 items-center justify-center whitespace-nowrap rounded-full border border-ink-strong bg-transparent px-3.5 py-2 font-sans text-[14px] font-bold leading-none tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-on-cream dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page sm:px-5 sm:py-2.5";
 
-/** CTA formulaire : même logique (coins arrondis conservés). */
+/** CTA formulaire : même hauteur / rayon que la barre de navigation. */
 const primaryCtaClass =
-  "inline-flex items-center justify-center rounded-xl border border-ink-strong bg-transparent px-6 py-3.5 font-sans text-sm font-bold tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-on-cream dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-transparent disabled:hover:text-ink-strong dark:disabled:hover:bg-transparent dark:disabled:hover:text-cream";
+  "inline-flex items-center justify-center whitespace-nowrap rounded-full border border-ink-strong bg-transparent px-3.5 py-2 font-sans text-[14px] font-bold leading-none tracking-wide text-ink-strong transition-colors duration-200 hover:bg-ink-strong hover:text-cream focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-mint/50 focus-visible:ring-offset-2 dark:border-cream dark:text-cream dark:hover:bg-cream dark:hover:text-ink-on-cream dark:focus-visible:ring-mint/40 dark:focus-visible:ring-offset-page disabled:cursor-not-allowed disabled:opacity-45 disabled:hover:bg-transparent disabled:hover:text-ink-strong dark:disabled:hover:bg-transparent dark:disabled:hover:text-cream sm:px-5 sm:py-2.5";
 
 export default function Home() {
   const router = useRouter();
@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1">
       <header className="sticky top-0 z-50 border-b border-ink-strong/10 bg-page/95 text-ink-strong backdrop-blur-md dark:border-cream/15 dark:bg-page/95 dark:text-cream">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-3 sm:px-8">
           <a
             href="/"
             className="font-heading text-lg font-semibold tracking-[0.22em] sm:text-xl"
@@ -255,11 +255,11 @@ export default function Home() {
                 </div>
                 <div className="relative aspect-square overflow-hidden rounded-2xl border border-ink-strong/10 shadow-sm dark:border-cream/10">
                   <Image
-                    src="/images/femme-meditation.jpg"
-                    alt="Moment de calme et méditation"
+                    src="/images/femme-yoga-experience.png"
+                    alt="Silhouette de femme en posture de yoga face au soleil couchant sur la plage"
                     fill
-                    quality={65}
-                    className="object-cover"
+                    quality={75}
+                    className="object-cover object-center"
                     sizes="(max-width: 640px) 42vw, (max-width: 1024px) 22vw, 280px"
                   />
                 </div>
@@ -292,10 +292,10 @@ export default function Home() {
             </div>
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-ink-strong/10 shadow-sm dark:border-cream/10">
               <Image
-                src="/images/herbes-paysage.png"
-                alt="Détail végétal, ambiance nature"
+                src="/images/paysage-balade-sable.png"
+                alt="Chemin de sable entre les dunes vers la mer, presqu&apos;île de Crozon"
                 fill
-                quality={68}
+                quality={75}
                 className="object-cover object-center"
                 sizes="(max-width: 640px) 92vw, (max-width: 1024px) 31vw, 360px"
               />
@@ -314,11 +314,13 @@ export default function Home() {
           <div className="mt-8 space-y-6 leading-relaxed text-ink dark:text-cream/85">
             <p>
               <strong className="text-ink-strong dark:text-cream">
-                Comment s&apos;y rendre ?
+                Comment s&apos;y rendre depuis Paris ?
               </strong>
             </p>
             <p>
-              <strong>En train</strong> — l&apos;option la plus confortable : Paris-Montparnasse
+              <strong>En train</strong>
+              {" "}
+              — l&apos;option la plus confortable : Paris-Montparnasse
               → Brest en TGV (environ 4 h), puis navette ou covoiturage jusqu&apos;à
               Crozon (~45 min). En réservant environ deux mois à l&apos;avance,
               comptez 40 à 60 € l&apos;aller.
@@ -558,15 +560,16 @@ export default function Home() {
           className="scroll-mt-24"
           aria-labelledby="titre-inscription"
         >
-          <div className="rounded-3xl border border-brand/35 bg-gradient-to-br from-sage/40 via-page to-card p-8 shadow-md dark:border-brand/30 dark:from-sage/25 dark:via-page dark:to-card sm:p-10">
+          <div className="rounded-3xl border border-brand/35 bg-gradient-to-br from-sage/40 via-page to-card p-8 dark:border-brand/30 dark:from-sage/25 dark:via-page dark:to-card sm:p-10">
             <h2 id="titre-inscription" className={sectionTitleClass}>
               Inscription
             </h2>
-            <p className="mt-3 text-ink/90 dark:text-cream/75">
+            <p className="mt-3 text-[16px] leading-relaxed text-ink/90 dark:text-cream/75">
               Laissez-nous vos coordonnées : nous vous enverrons les informations
               de paiement par email. Un acompte de{" "}
-              <strong className="text-ink-strong dark:text-cream">75&nbsp;€</strong>{" "}
-              est demandé pour confirmer votre inscription.
+              <strong className="text-ink-strong dark:text-cream">100&nbsp;€</strong>{" "}
+              est demandé pour confirmer votre inscription. Toute annulation avant le
+              31 août 2026 est remboursée intégralement.
             </p>
 
             {error && (
