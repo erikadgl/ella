@@ -39,7 +39,7 @@ export async function POST(request: Request) {
       (err as { code: string }).code === "23505"
     ) {
       return NextResponse.json(
-        { error: "Cet email est deja inscrit" },
+        { error: "Cet email est déjà inscrit." },
         { status: 409 },
       );
     }

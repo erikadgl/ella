@@ -24,12 +24,22 @@ export default function ConfirmationPage() {
           </svg>
         </div>
         <h1 className="mb-3 font-heading text-2xl font-semibold text-ink-strong dark:text-cream">
-          Inscription confirmée !
+          Demande d&apos;inscription envoyée !
         </h1>
+        <p className="mb-4 text-ink/90 dark:text-cream/75">
+          Merci : nous avons bien reçu votre demande d&apos;inscription. Un email
+          de confirmation avec les modalités de paiement (acompte de{" "}
+          100&nbsp;€) vous a été envoyé. Pensez à vérifier vos spams.
+        </p>
         <p className="mb-6 text-ink/90 dark:text-cream/75">
-          Merci pour votre inscription. Un email de confirmation avec les
-          modalités de paiement (acompte de 100&nbsp;€) vous a été envoyé. Pensez
-          à vérifier vos spams.
+          Pour toute question ou information complémentaire, écrivez à{" "}
+          <a
+            href="mailto:contact@ella-ayurveda.com"
+            className="font-medium text-ink-strong underline decoration-brand/50 underline-offset-4 transition hover:text-brand dark:text-[#B3D3CD] dark:hover:text-brand"
+          >
+            contact@ella-ayurveda.com
+          </a>
+          .
         </p>
         <Link
           href="/"
