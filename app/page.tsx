@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div className="flex flex-col flex-1">
       <header className="sticky top-0 z-50 border-b border-ink-strong/10 bg-page/95 text-ink-strong backdrop-blur-md dark:border-cream/15 dark:bg-page/95 dark:text-cream">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-3 sm:px-8">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-3 sm:px-10 lg:px-12 xl:px-16">
           <a
             href="/"
             className="font-heading text-lg font-semibold tracking-[0.22em] sm:text-xl"
@@ -145,7 +145,7 @@ export default function Home() {
 
       <main
         id="contenu-principal"
-        className="mx-auto w-full max-w-6xl flex-1 px-6 py-16 sm:px-8"
+        className="mx-auto w-full max-w-6xl flex-1 px-6 py-16 sm:px-10 lg:px-12 xl:px-16"
       >
         <div className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
@@ -653,13 +653,15 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-ink-strong/10 bg-sage/35 py-10 text-center text-sm text-ink dark:border-cream/15 dark:bg-sage dark:text-cream/85">
-        <p className="font-medium text-ink-strong dark:text-cream/95">
-          Week-end Ayurveda &amp; Sonothérapie · 9 – 11 octobre 2026
-        </p>
-        <p className="mt-6 text-xs opacity-80">
-          &copy; {new Date().getFullYear()} · Tous droits réservés
-        </p>
+      <footer className="border-t border-ink-strong/10 bg-sage/35 py-10 text-sm text-ink dark:border-cream/15 dark:bg-sage dark:text-cream/85">
+        <div className="mx-auto max-w-6xl px-6 text-center sm:px-10 lg:px-12 xl:px-16">
+          <p className="font-medium text-ink-strong dark:text-cream/95">
+            Week-end Ayurveda &amp; Sonothérapie · 9 – 11 octobre 2026
+          </p>
+          <p className="mt-6 text-xs opacity-80">
+            &copy; {new Date().getFullYear()} · Tous droits réservés
+          </p>
+        </div>
       </footer>
     </div>
   );
