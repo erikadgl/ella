@@ -6,8 +6,18 @@ import {
 } from "@/lib/email";
 
 export async function POST(request: Request) {
-  const body = await request.json();
-  const { name, email, phone } = body;
+  let body: unknown;
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Payload invalide" }, { status: 400 });
+  }
+
+  const { name, email, phone } = body as {
+    name?: string;
+    email?: string;
+    phone?: string | null;
+  };
 
   if (!name || !email) {
     return NextResponse.json(
@@ -16,33 +26,53 @@ export async function POST(request: Request) {
     );
   }
 
+  const phoneValue = phone ?? null;
+
   try {
     const result = await pool.query(
       `INSERT INTO subscriptions (name, email, phone)
        VALUES ($1, $2, $3)
        RETURNING *`,
-      [name, email, phone || null],
+      [name, email, phoneValue],
     );
 
     const subscription = result.rows[0];
 
     await Promise.allSettled([
       sendConfirmationEmail(email, name),
-      sendAdminNotification(name, email, phone),
+      sendAdminNotification(name, email, phoneValue),
     ]);
 
     return NextResponse.json({ subscription }, { status: 201 });
   } catch (err: unknown) {
-    if (
-      err instanceof Error &&
+    const code =
+      err &&
+      typeof err === "object" &&
       "code" in err &&
-      (err as { code: string }).code === "23505"
-    ) {
+      typeof (err as { code?: unknown }).code === "string"
+        ? (err as { code: string }).code
+        : undefined;
+
+    if (code === "23505") {
       return NextResponse.json(
         { error: "Cet email est déjà inscrit." },
         { status: 409 },
       );
     }
+
+    // Visible dans les logs Vercel pour diagnostiquer rapidement la prod.
+    console.error("[subscribe] failed", {
+      message: err instanceof Error ? err.message : String(err),
+      code,
+    });
+
+    if (code === "42P01") {
+      return NextResponse.json(
+        { error: "Base de données non initialisée (table manquante)." },
+        { status: 500 },
+      );
+    }
+
     return NextResponse.json(
       { error: "Erreur lors de l'inscription" },
       { status: 500 },
