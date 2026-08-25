@@ -534,6 +534,94 @@ export default function Home() {
         </section>
 
         <section
+          id="intervenants"
+          className="mb-20 scroll-mt-24"
+          aria-labelledby="titre-intervenants"
+        >
+          <h2 id="titre-intervenants" className={sectionTitleClass}>
+            Les intervenants
+          </h2>
+          <div className="mt-8 space-y-6 sm:space-y-8">
+            <article className="grid grid-cols-[6.5rem_1fr] items-start gap-4 rounded-2xl border border-ink-strong/10 bg-card p-4 dark:border-cream/10 sm:grid-cols-[13rem_1fr] sm:gap-8 sm:p-6 lg:grid-cols-[15rem_1fr] lg:p-8">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-strong/5">
+                <Image
+                  src="/images/jerome-forest.png"
+                  alt="Jérôme Forest au gong, dans un jardin"
+                  fill
+                  quality={72}
+                  className="object-cover object-[20%_center]"
+                  sizes="(max-width: 640px) 6.5rem, (max-width: 1024px) 13rem, 15rem"
+                />
+              </div>
+              <div>
+                <h3 className="font-heading text-xl font-semibold text-ink-strong dark:text-cream sm:text-2xl">
+                  Jérôme Forest
+                </h3>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand">
+                  Sonothérapeute
+                </p>
+                <div className="mt-4 space-y-4 text-base leading-relaxed text-ink dark:text-cream/90 sm:mt-5">
+                  <p>
+                    Musicien et compositeur depuis plus de 30 ans, Jérôme explore
+                    le pouvoir des sons et des vibrations. Gongs, bols tibétains
+                    et de cristal, handpan, flûtes et percussions&nbsp;: il crée
+                    des expériences sonores immersives.
+                  </p>
+                  <p>
+                    Durant le week-end, il vous guidera à travers des voyages
+                    sonores, propices à la détente profonde et à l&apos;exploration
+                    intérieure.
+                  </p>
+                </div>
+                <p className="mt-5 sm:mt-6">
+                  <a
+                    href="https://www.terrasonoris.fr/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-medium text-ink-strong underline decoration-brand/50 underline-offset-4 transition hover:text-brand dark:text-[#B3D3CD] dark:hover:text-brand"
+                  >
+                    terrasonoris.fr
+                  </a>
+                </p>
+              </div>
+            </article>
+
+            <article className="grid grid-cols-[6.5rem_1fr] items-start gap-4 rounded-2xl border border-ink-strong/10 bg-card p-4 dark:border-cream/10 sm:grid-cols-[13rem_1fr] sm:gap-8 sm:p-6 lg:grid-cols-[15rem_1fr] lg:p-8">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-ink-strong/5">
+                <Image
+                  src="/images/camille-guegan-paviot.png"
+                  alt="Portrait de Camille Guegan Paviot"
+                  fill
+                  quality={72}
+                  className="object-cover object-[center_20%]"
+                  sizes="(max-width: 640px) 6.5rem, (max-width: 1024px) 13rem, 15rem"
+                />
+              </div>
+              <div>
+                <h3 className="font-heading text-xl font-semibold text-ink-strong dark:text-cream sm:text-2xl">
+                  Camille Guegan Paviot
+                </h3>
+                <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-brand">
+                  Cuisine
+                </p>
+                <div className="mt-4 space-y-4 text-base leading-relaxed text-ink dark:text-cream/90 sm:mt-5">
+                  <p>
+                    Passionnée par une cuisine savoureuse, Camille accompagne le
+                    week-end avec des repas sains, gourmands et réconfortants,
+                    préparés à partir de produits frais.
+                  </p>
+                  <p>
+                    Petits-déjeuners, déjeuners et dîners suivent le rythme des
+                    pratiques&nbsp;: une cuisine généreuse, pour prendre soin de
+                    soi jusque dans l&apos;assiette.
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section
           id="contact"
           className="mb-16 scroll-mt-24 text-center"
           aria-labelledby="titre-contact"
